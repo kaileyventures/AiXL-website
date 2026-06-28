@@ -1754,6 +1754,18 @@ body.light-theme .footer-social-link {
         font-size: 2.2rem;
     }
 
+    .navbar {
+        padding: 1rem 1.25rem;
+    }
+
+    .navbar.scrolled {
+        padding: 0.65rem 1.25rem;
+    }
+
+    .theme-toggle-btn {
+        margin-right: 0.5rem;
+    }
+
     /* Mobile Navigation menu */
     .hamburger {
         display: block;
