@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AiXL | The AI-Powered Copilot for Microsoft Excel</title>
+    <meta name="description" content="Supercharge your spreadsheets with AiXL. Generate complex formulas, clean data, and analyze trends directly inside Excel with natural language.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Grid & Orbs -->
+    <div class="grid-overlay" id="gridOverlay"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <!-- Navigation Header -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo-container">
+                <div class="logo-icon">X</div>
+                <div class="logo-text">Ai<span>XL</span></div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#demo">Live Demo</a></li>
+                <li><a href="#download">Download</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <a href="https://github.com/kaileyventures/AiXL/releases/tag/AiXL" target="_blank" class="btn-nav-download">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        Addon
+                    </a>
+                </li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-grid">
+            <div class="hero-content reveal-left">
+                <div class="badge-new">
+                    <span class="pill">New v1.0</span>
+                    <span>Excel AI Integration is here</span>
+                </div>
+                <h1 class="hero-title">Supercharge Excel with <span>AI Intelligence</span></h1>
+                <p class="hero-desc">Bring the power of leading AI models directly inside your spreadsheets. Write formulas, clean messy datasets, and extract deep insights using natural language.</p>
+                <div class="hero-actions">
+                    <a href="https://github.com/kaileyventures/AiXL/releases/tag/AiXL" target="_blank" class="btn-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        Download Addon
+                    </a>
+                    <a href="#demo" class="btn-secondary">See How it Works</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>10x</h3>
+                        <p>Faster Formulas</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>Private & Secure</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>Zero</h3>
+                        <p>Coding Needed</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual reveal-right">
+                <!-- Visual Dashboard mockup -->
+                <div class="dashboard-mockup glass-panel">
+                    <div class="dash-header">
+                        <div class="dash-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="dash-title">AiXL Add-on Sidepanel</div>
+                        <div style="width: 30px;"></div>
+                    </div>
+                    <div class="dash-body">
+                        <div class="dash-element dash-element-formula">
+                            <span class="dash-pulse-dot"></span>
+                            <div class="dash-label">AI Formula Explainer</div>
+                            <div class="dash-val" style="color: var(--primary-cyan);">=IF(ISNUMBER(SEARCH("VIP", A2)), B2*0.2, B2*0.05)</div>
+                        </div>
+                        <div class="dash-element" style="border-left: 3px solid var(--primary-pink)">
+                            <div class="dash-label">Natural Language Prompt</div>
+                            <div class="dash-val" style="font-size: 0.85rem; color: var(--text-secondary);">"Apply a 20% discount if the customer is marked VIP in column A, otherwise apply 5% discount to the amount in column B."</div>
+                        </div>
+                        <div class="dash-element dash-element-chart">
+                            <div class="dash-label">Status & API Model</div>
+                            <div class="dash-val" style="font-size: 0.85rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Connected to Claude 3.5 Sonnet</span>
+                                <span style="background: rgba(16, 185, 129, 0.15); color: #10b981; padding: 2px 8px; border-radius: 4px; font-weight: 600; font-size: 0.75rem;">Active</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+        <div class="section-header reveal">
+            <span class="section-tag">Core Features</span>
+            <h2 class="section-title">Designed for Excel Power Users</h2>
+            <p class="section-subtitle">Save hours of repetitive tasking. Type what you want to achieve, and let AiXL handle the heavy lifting inside your workbook.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card glass-panel reveal reveal-delay-1">
+                <div class="feature-icon-wrapper">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                </div>
+                <h3>AI Formula Generator</h3>
+                <p>Describe your logic in plain English. AiXL translates it instantly into correct Excel syntax—even for complex nested lookups, arrays, and index-match functions.</p>
+            </div>
+            <div class="feature-card glass-panel reveal reveal-delay-2">
+                <div class="feature-icon-wrapper">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                </div>
+                <h3>Automated Data Cleaning</h3>
+                <p>Fix messy columns in a flash. Standardize names, parse addresses, fix irregular dates, and strip out unnecessary whitespaces without writing custom scripts.</p>
+            </div>
+            <div class="feature-card glass-panel reveal reveal-delay-3">
+                <div class="feature-icon-wrapper">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                </div>
+                <h3>Smart Visual Insights</h3>
+                <p>Chat directly with your dataset. Ask for trends, patterns, summaries, or automatic chart creation. AiXL scans rows and delivers professional insights instantly.</p>
+            </div>
+            <div class="feature-card glass-panel reveal reveal-delay-4">
+                <div class="feature-icon-wrapper">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                </div>
+                <h3>Security & Privacy First</h3>
+                <p>Your spreadsheet data is sensitive. AiXL uses safe local endpoints or secure connections to enterprise APIs ensuring your data is never used for public training.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Demo Section -->
+    <section id="demo">
+        <div class="section-header reveal">
+            <span class="section-tag">Interactive Simulation</span>
+            <h2 class="section-title">See AiXL in Action</h2>
+            <p class="section-subtitle">Click on the sample tasks below to see how AiXL dynamically understands and writes the correct sheet functions in real-time.</p>
+        </div>
+
+        <div class="demo-container glass-panel reveal">
+            <div class="demo-sidebar">
+                <h3>Select a prompt:</h3>
+                <div class="demo-prompt-list">
+                    <button class="demo-prompt-btn active" data-type="formula">
+                        <span>Generate Excel Formula</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                    <button class="demo-prompt-btn" data-type="cleaning">
+                        <span>Auto-Clean Names</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                    <button class="demo-prompt-btn" data-type="analysis">
+                        <span>Conditional Tagging</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="demo-workspace">
+                <div class="demo-chat-box">
+                    <div class="chat-input-row">
+                        <strong>AiXL Prompt:</strong>
+                        <span class="chat-typed-text" id="chatText"></span>
+                    </div>
+                </div>
+
+                <div class="excel-mockup">
+                    <div class="excel-topbar">
+                        <span class="excel-fx-label">fx</span>
+                        <div class="excel-formula-bar" id="formulaBar"></div>
+                    </div>
+                    <div class="excel-grid" id="excelGrid">
+                        <!-- Headers -->
+                        <div class="excel-header-cell"></div>
+                        <div class="excel-header-cell" id="colA">A</div>
+                        <div class="excel-header-cell" id="colB">B</div>
+                        <div class="excel-header-cell" id="colC">C</div>
+
+                        <!-- Row 1 -->
+                        <div class="excel-cell excel-cell-index">1</div>
+                        <div class="excel-cell excel-cell-data" id="cellA1">john@gmail.com</div>
+                        <div class="excel-cell excel-cell-data" id="cellB1"></div>
+                        <div class="excel-cell excel-cell-data" id="cellC1"></div>
+
+                        <!-- Row 2 -->
+                        <div class="excel-cell excel-cell-index">2</div>
+                        <div class="excel-cell excel-cell-data" id="cellA2">sarah@kailey.com</div>
+                        <div class="excel-cell excel-cell-data" id="cellB2"></div>
+                        <div class="excel-cell excel-cell-data" id="cellC2"></div>
+
+                        <!-- Row 3 -->
+                        <div class="excel-cell excel-cell-index">3</div>
+                        <div class="excel-cell excel-cell-data" id="cellA3">dev@ventures.org</div>
+                        <div class="excel-cell excel-cell-data" id="cellB3"></div>
+                        <div class="excel-cell excel-cell-data" id="cellC3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download">
+        <div class="download-container glass-panel reveal">
+            <div class="download-content">
+                <h2 class="download-title">Bring AI to your Excel <span>Today</span></h2>
+                <p class="download-desc">Download the AiXL addon file directly from our official Github releases and start working smarter in under 2 minutes.</p>
+                <div class="download-actions">
+                    <a href="https://github.com/kaileyventures/AiXL/releases/tag/AiXL" target="_blank" class="btn-primary">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        Get AiXL Addon
+                    </a>
+                    <span class="download-subtext">Supports Excel 2019, 2021, and Excel 365 (Windows/macOS/Web)</span>
+                </div>
+
+                <!-- Install Steps card -->
+                <div class="install-steps">
+                    <div class="install-steps-title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                        Easy Installation Guide
+                    </div>
+                    <ol class="steps-list">
+                        <li class="step-item">
+                            <div class="step-num">1</div>
+                            <div class="step-text">
+                                <h4>Download Manifest</h4>
+                                <p>Click download to save the addon package folder from GitHub releases.</p>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <div class="step-num">2</div>
+                            <div class="step-text">
+                                <h4>Insert Add-in</h4>
+                                <p>In Microsoft Excel, head to Insert > My Add-ins > Developer Add-ins.</p>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <div class="step-num">3</div>
+                            <div class="step-text">
+                                <h4>Select Manifest</h4>
+                                <p>Locate the downloaded manifest XML and press register to launch the sidebar.</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-header reveal">
+            <span class="section-tag">Get in Touch</span>
+            <h2 class="section-title">We'd Love to Hear From You</h2>
+            <p class="section-subtitle">Have questions about integrations, security configs, or feature requests? Drop us a line below.</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-info reveal-left">
+                <div class="contact-card glass-panel">
+                    <h3>Contact Information</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem;">Our team typically responds to inquiries within 24 business hours.</p>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </div>
+                        <div class="contact-meta">
+                            <h4>Email Us Directly</h4>
+                            <a href="mailto:kaileyventures@gmail.com">kaileyventures@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </div>
+                        <div class="contact-meta">
+                            <h4>Find us on GitHub</h4>
+                            <a href="https://github.com/kaileyventures" target="_blank">github.com/kaileyventures</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-panel glass-panel reveal-right">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" class="form-input" id="name" placeholder=" " required autocomplete="name">
+                        <label class="form-label" for="name">Your Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-input" id="email" placeholder=" " required autocomplete="email">
+                        <label class="form-label" for="email">Email Address</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-input" id="message" placeholder=" " required></textarea>
+                        <label class="form-label" for="message">Your Message</label>
+                    </div>
+                    <button type="submit" class="btn-primary btn-nav-download btn-form-submit">
+                        Send Message
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    </button>
+                    <div class="form-status success" id="formStatus">
+                        Your message has been sent successfully! We will contact you soon.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <a href="#" class="logo-container">
+                    <div class="logo-icon">X</div>
+                    <div class="logo-text">Ai<span>XL</span></div>
+                </a>
+                <div class="footer-dev">
+                    Developer: <span><strong>KAILEY</strong>ventures</span>
+                </div>
+                <ul class="footer-socials">
+                    <li>
+                        <a href="https://github.com/kaileyventures" target="_blank" class="footer-social-link" aria-label="GitHub">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 AiXL. All rights reserved. Created for spreadsheets efficiency.</p>
+                <div class="footer-bottom-links">
+                    <a href="#features">Features</a>
+                    <a href="#demo">Demo</a>
+                    <a href="#download">Download</a>
+                    <a href="https://github.com/kaileyventures" target="_blank">Organization</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
