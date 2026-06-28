@@ -50,6 +50,7 @@
     --mobile-nav-hover: rgba(255, 255, 255, 0.05);
     --install-steps-bg: rgba(8, 7, 16, 0.5);
     --footer-bg: rgba(5, 5, 10, 0.9);
+    --back-to-top-bg: rgba(8, 12, 20, 0.92);
 }
 
 body.light-theme {
@@ -84,6 +85,7 @@ body.light-theme {
     --mobile-nav-hover: rgba(0, 0, 0, 0.04);
     --install-steps-bg: rgba(241, 245, 249, 0.65);
     --footer-bg: rgba(241, 245, 249, 0.95);
+    --back-to-top-bg: rgba(248, 250, 252, 0.92);
 }
 
 /* Reset & Base Styles */
@@ -1009,11 +1011,10 @@ body.light-theme .demo-prompt-btn:hover {
     background: var(--excel-bg);
     border: 1px solid var(--excel-border);
     border-radius: 16px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
     box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2);
     transition: var(--transition-smooth);
     width: 100%;
+    overflow: hidden;
 }
 
 .excel-topbar {
@@ -1054,10 +1055,10 @@ body.light-theme .demo-prompt-btn:hover {
 
 .excel-grid {
     display: grid;
-    grid-template-columns: 44px repeat(3, minmax(100px, 1fr));
-    font-size: 0.85rem;
+    grid-template-columns: 32px repeat(3, minmax(0, 1fr));
+    font-size: 0.8rem;
     background: var(--excel-bg);
-    min-width: 360px;
+    width: 100%;
 }
 
 .excel-header-cell, .excel-cell {
@@ -1091,6 +1092,10 @@ body.light-theme .demo-prompt-btn:hover {
     font-family: monospace;
     background: transparent;
     transition: var(--transition-smooth);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.75rem;
 }
 
 .excel-cell-data.highlighted {
@@ -2037,7 +2042,9 @@ body.light-theme .footer-social-link {
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background: var(--bg-dark-card);
+    background: var(--back-to-top-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border: 1px solid var(--border-glass);
     cursor: pointer;
     display: flex;
@@ -2087,5 +2094,18 @@ body.light-theme .footer-social-link {
     .back-to-top-svg {
         width: 42px;
         height: 42px;
+    }
+}
+
+@media (max-width: 480px) {
+    .back-to-top {
+        bottom: 1rem;
+        right: 1rem;
+        width: 40px;
+        height: 40px;
+    }
+    .back-to-top-svg {
+        width: 40px;
+        height: 40px;
     }
 }
