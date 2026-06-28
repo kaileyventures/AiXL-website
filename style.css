@@ -99,6 +99,7 @@ html {
     scroll-behavior: smooth;
     font-size: 16px;
     background-color: var(--bg-dark);
+    overflow-x: hidden;
 }
 
 body {
@@ -758,6 +759,8 @@ section {
     font-family: monospace;
     font-size: 0.95rem;
     color: var(--text-primary);
+    word-break: break-all;
+    white-space: normal;
 }
 
 .dash-pulse-dot {
@@ -1877,14 +1880,45 @@ body.light-theme .footer-social-link {
         grid-template-columns: 1fr;
     }
 
-    /* Mobile: Demo container adjustments */
+    /* Mobile: Demo container adjustments & swipeable prompts */
     .demo-container {
-        padding: 1.5rem;
-        gap: 1.5rem;
+        padding: 1.25rem;
+        gap: 1.25rem;
+    }
+
+    .demo-prompt-list {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+        gap: 0.5rem;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+    }
+
+    .demo-prompt-btn {
+        flex: 0 0 auto;
+        width: auto;
+        padding: 0.6rem 1rem;
+        scroll-snap-align: start;
+    }
+
+    .demo-btn-desc, 
+    .demo-prompt-btn .arrow-icon {
+        display: none;
+    }
+
+    .chat-typed-text {
+        white-space: normal;
+        max-width: 100%;
+        word-break: break-word;
+    }
+
+    .excel-header-cell, .excel-cell {
+        padding: 0.4rem 0.5rem;
     }
 
     .demo-sidebar h3 {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     /* Mobile: contact form full width */
@@ -1998,15 +2032,20 @@ body.light-theme .footer-social-link {
     }
 
     .demo-container {
-        padding: 1.25rem;
+        padding: 1rem;
     }
 
     .demo-prompt-btn {
-        padding: 0.65rem 0.75rem;
+        padding: 0.5rem 0.75rem;
     }
 
-    .demo-btn-desc {
-        display: none;
+    .excel-header-cell, .excel-cell {
+        padding: 0.3rem 0.35rem;
+        font-size: 0.7rem;
+    }
+
+    .excel-grid {
+        grid-template-columns: 24px repeat(3, minmax(0, 1fr));
     }
 
     .nav-links {
@@ -2119,5 +2158,10 @@ body.light-theme .footer-social-link {
     .back-to-top-svg {
         width: 40px;
         height: 40px;
+    }
+    .dash-element-chart .dash-val {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 0.5rem;
     }
 }
