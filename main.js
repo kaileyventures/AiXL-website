@@ -5,17 +5,36 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Mobile Menu Toggler
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
-    
+    const navOverlay = document.getElementById('navOverlay');
+
+    function openMenu() {
+        hamburger.classList.add('active');
+        navLinks.classList.add('active');
+        navOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+        navOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
     hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navLinks.classList.toggle('active');
+        if (hamburger.classList.contains('active')) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
     });
+
+    navOverlay.addEventListener('click', closeMenu);
 
     // Close menu when links are clicked (for mobile users)
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
+            closeMenu();
         });
     });
 
@@ -269,6 +288,12 @@ document.addEventListener('DOMContentLoaded', () => {
             formStatus.style.display = 'none';
         }, 5000);
     });
+
+    // Set dynamic copyright year
+    const copyrightYearEl = document.getElementById('copyrightYear');
+    if (copyrightYearEl) {
+        copyrightYearEl.textContent = new Date().getFullYear();
+    }
 
     // Adjust grid parallax background on mouse movement (Extra wow factor)
     const gridOverlay = document.getElementById('gridOverlay');
