@@ -304,4 +304,30 @@ document.addEventListener('DOMContentLoaded', () => {
         gridOverlay.style.transform = `translate(${x * 8}px, ${y * 8}px)`;
     });
 
+    // Back to Top scroll progress and outline fill functionality
+    const backToTopBtn = document.getElementById('backToTop');
+    const progressCircle = document.querySelector('.back-to-top-circle');
+    const pathLength = 132; // Circumference of r=21 circle (2 * Math.PI * 21)
+
+    window.addEventListener('scroll', () => {
+        const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+        
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('visible');
+            const drawLength = pathLength * scrollPercent;
+            progressCircle.style.strokeDashoffset = pathLength - drawLength;
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        // Reset path to empty on click
+        progressCircle.style.strokeDashoffset = pathLength;
+    });
+
 });

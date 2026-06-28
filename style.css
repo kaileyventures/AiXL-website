@@ -2028,3 +2028,64 @@ body.light-theme .footer-social-link {
         grid-column: span 1;
     }
 }
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--bg-dark-card);
+    border: 1px solid var(--border-glass);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease, background-color 0.4s ease, border-color 0.4s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    padding: 0;
+    outline: none;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: rgba(10, 190, 170, 0.08);
+    border-color: var(--brand-teal);
+    transform: translateY(-3px);
+}
+
+.back-to-top-svg {
+    transform: rotate(-90deg);
+}
+
+.back-to-top-circle {
+    transition: stroke-dashoffset 0.1s linear;
+}
+
+.back-to-top svg path {
+    transition: stroke 0.3s ease, fill 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 42px;
+        height: 42px;
+    }
+    .back-to-top-svg {
+        width: 42px;
+        height: 42px;
+    }
+}
