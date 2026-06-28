@@ -29,6 +29,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // 2.5. Theme Switcher (Dark/Light Mode)
+    const themeToggle = document.getElementById('themeToggle');
+    const storedTheme = localStorage.getItem('aixl-theme');
+    
+    // Determine initial theme
+    if (storedTheme === 'light') {
+        document.body.classList.add('light-theme');
+    } else if (storedTheme === 'dark') {
+        document.body.classList.remove('light-theme');
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.body.classList.add('light-theme');
+    }
+
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('light-theme');
+        const theme = document.body.classList.contains('light-theme') ? 'light' : 'dark';
+        localStorage.setItem('aixl-theme', theme);
+    });
+
     // 3. Scroll Reveal Animations (Intersection Observer)
     const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
     

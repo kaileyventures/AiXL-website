@@ -19,26 +19,25 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#" class="logo-container">
-                <div class="logo-icon">X</div>
-                <div class="logo-text">Ai<span>XL</span></div>
+                <img src="https://res.cloudinary.com/dxojtisjb/image/upload/v1782547842/AiXL_Logo_ki2pfc.png" alt="AiXL Logo" class="logo-img">
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#features">Features</a></li>
                 <li><a href="#demo">Live Demo</a></li>
                 <li><a href="#download">Download</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li>
-                    <a href="https://github.com/kaileyventures/AiXL/releases/tag/AiXL" target="_blank" class="btn-nav-download">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                        Addon
-                    </a>
-                </li>
             </ul>
-            <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div class="nav-actions">
+                <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -51,6 +50,7 @@
                     <span>Excel AI Integration is here</span>
                 </div>
                 <h1 class="hero-title">Supercharge Excel with <span>AI Intelligence</span></h1>
+                <div class="hero-tagline">Prompt your logic. We compile the syntax.</div>
                 <p class="hero-desc">Bring the power of leading AI models directly inside your spreadsheets. Write formulas, clean messy datasets, and extract deep insights using natural language.</p>
                 <div class="hero-actions">
                     <a href="https://github.com/kaileyventures/AiXL/releases/tag/AiXL" target="_blank" class="btn-primary">
@@ -161,16 +161,40 @@
                 <h3>Select a prompt:</h3>
                 <div class="demo-prompt-list">
                     <button class="demo-prompt-btn active" data-type="formula">
-                        <span>Generate Excel Formula</span>
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        <div class="demo-btn-left">
+                            <div class="demo-btn-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                            </div>
+                            <div class="demo-btn-meta">
+                                <span class="demo-btn-title">Generate Formula</span>
+                                <span class="demo-btn-desc">Translate logic to Excel functions</span>
+                            </div>
+                        </div>
+                        <svg class="arrow-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </button>
                     <button class="demo-prompt-btn" data-type="cleaning">
-                        <span>Auto-Clean Names</span>
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        <div class="demo-btn-left">
+                            <div class="demo-btn-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            </div>
+                            <div class="demo-btn-meta">
+                                <span class="demo-btn-title">Auto-Clean Data</span>
+                                <span class="demo-btn-desc">Standardize text formats instantly</span>
+                            </div>
+                        </div>
+                        <svg class="arrow-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </button>
                     <button class="demo-prompt-btn" data-type="analysis">
-                        <span>Conditional Tagging</span>
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        <div class="demo-btn-left">
+                            <div class="demo-btn-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"></path></svg>
+                            </div>
+                            <div class="demo-btn-meta">
+                                <span class="demo-btn-title">Conditional Tagging</span>
+                                <span class="demo-btn-desc">Apply smart logical conditions</span>
+                            </div>
+                        </div>
+                        <svg class="arrow-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </button>
                 </div>
             </div>
@@ -178,8 +202,13 @@
             <div class="demo-workspace">
                 <div class="demo-chat-box">
                     <div class="chat-input-row">
-                        <strong>AiXL Prompt:</strong>
-                        <span class="chat-typed-text" id="chatText"></span>
+                        <div class="chat-avatar">
+                            <img src="https://res.cloudinary.com/dxojtisjb/image/upload/v1782547842/AiXL_Logo_ki2pfc.png" alt="AiXL Logo" class="chat-avatar-img">
+                        </div>
+                        <div class="chat-text-container">
+                            <span class="chat-title">AiXL Copilot</span>
+                            <span class="chat-typed-text" id="chatText"></span>
+                        </div>
                     </div>
                 </div>
 
@@ -274,49 +303,57 @@
             <p class="section-subtitle">Have questions about integrations, security configs, or feature requests? Drop us a line below.</p>
         </div>
 
-        <div class="contact-grid">
-            <div class="contact-info reveal-left">
-                <div class="contact-card glass-panel">
-                    <h3>Contact Information</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.95rem;">Our team typically responds to inquiries within 24 business hours.</p>
-                    
-                    <div class="contact-detail">
-                        <div class="contact-icon">
+        <div class="contact-wrapper glass-panel reveal">
+            <div class="contact-info-panel">
+                <div>
+                    <h3 class="contact-info-title">Contact Us</h3>
+                    <p class="contact-info-desc">Have questions about licensing, integrations, or security? Get in touch with our team.</p>
+                </div>
+                
+                <div class="contact-details-list">
+                    <div class="contact-detail-item">
+                        <div class="contact-detail-icon">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                         </div>
-                        <div class="contact-meta">
-                            <h4>Email Us Directly</h4>
+                        <div class="contact-detail-meta">
+                            <span>Email Us Directly</span>
                             <a href="mailto:kaileyventures@gmail.com">kaileyventures@gmail.com</a>
                         </div>
                     </div>
 
-                    <div class="contact-detail">
-                        <div class="contact-icon">
+                    <div class="contact-detail-item">
+                        <div class="contact-detail-icon">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                         </div>
-                        <div class="contact-meta">
-                            <h4>Find us on GitHub</h4>
+                        <div class="contact-detail-meta">
+                            <span>Find us on GitHub</span>
                             <a href="https://github.com/kaileyventures" target="_blank">github.com/kaileyventures</a>
                         </div>
                     </div>
                 </div>
+
+                <div class="contact-info-footer">
+                    <p>Typically replies within 24 business hours.</p>
+                </div>
             </div>
 
-            <div class="contact-form-panel glass-panel reveal-right">
+            <div class="contact-form-panel">
                 <form id="contactForm">
-                    <div class="form-group">
-                        <input type="text" class="form-input" id="name" placeholder=" " required autocomplete="name">
-                        <label class="form-label" for="name">Your Name</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-input" id="email" placeholder=" " required autocomplete="email">
-                        <label class="form-label" for="email">Email Address</label>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" class="form-input" id="name" placeholder=" " required autocomplete="name">
+                            <label class="form-label" for="name">Your Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-input" id="email" placeholder=" " required autocomplete="email">
+                            <label class="form-label" for="email">Email Address</label>
+                        </div>
                     </div>
                     <div class="form-group">
                         <textarea class="form-input" id="message" placeholder=" " required></textarea>
                         <label class="form-label" for="message">Your Message</label>
                     </div>
-                    <button type="submit" class="btn-primary btn-nav-download btn-form-submit">
+                    <button type="submit" class="btn-primary btn-form-submit">
                         Send Message
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
                     </button>
@@ -333,12 +370,8 @@
         <div class="footer-container">
             <div class="footer-top">
                 <a href="#" class="logo-container">
-                    <div class="logo-icon">X</div>
-                    <div class="logo-text">Ai<span>XL</span></div>
+                    <img src="https://res.cloudinary.com/dxojtisjb/image/upload/v1782547842/AiXL_Logo_ki2pfc.png" alt="AiXL Logo" class="logo-img">
                 </a>
-                <div class="footer-dev">
-                    Developer: <span><strong>KAILEY</strong>ventures</span>
-                </div>
                 <ul class="footer-socials">
                     <li>
                         <a href="https://github.com/kaileyventures" target="_blank" class="footer-social-link" aria-label="GitHub">
@@ -349,12 +382,12 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2026 AiXL. All rights reserved. Created for spreadsheets efficiency.</p>
+                <p>&copy; 2026 AiXL. All rights reserved. Built for spreadsheet efficiency.</p>
                 <div class="footer-bottom-links">
                     <a href="#features">Features</a>
                     <a href="#demo">Demo</a>
                     <a href="#download">Download</a>
-                    <a href="https://github.com/kaileyventures" target="_blank">Organization</a>
+                    <a href="#contact">Contact</a>
                 </div>
             </div>
         </div>
